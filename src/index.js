@@ -1,8 +1,4 @@
 function log(...args) {
-  // console.log(args);
-
-  // const color =
-  // console.log(color);
 
   if (args?.length == 0) {
     throw new Error("Empty arguments in function call!");
@@ -13,7 +9,7 @@ function log(...args) {
     const type = Object.prototype.toString.call(arg).split(" ")[1];
     // console.log(logColor)
     // console.log(returnColor(arg), logColor)
-    if (returnColor(arg) === logColor) {
+    if (matchesAnyColorSymbol(arg)) {
       continue;
     }
 
@@ -22,10 +18,11 @@ function log(...args) {
       console.log(`%c ${JSON.stringify(arg)}`, ` color: ${logColor} `);
     } else if (type === "Array]") {
       for (const val of arg) {
+        // console.log(val)
         const dataType = Object.prototype.toString.call(val).split(" ")[1];
         // console.log(dataType);
         if (dataType === "Object]") {
-          console.log(`%c ${JSON.stringify(arg)}`, ` color: ${logColor} `);
+          console.log(`%c ${JSON.stringify(val)}`, ` color: ${logColor} `);
         } else {
           console.log(`%c ${val}`, ` color: ${logColor} `);
         }
@@ -35,26 +32,29 @@ function log(...args) {
     }
   }
 
-  //   console.log("%c Log", "color: red");
-  //   console.log(args);
 }
 
 function headlog(title, ...args) {
-  if (!!title) {
+  // console.log(args)
+  // console.log(title, args)
+  if (!!title && typeof(title)==='string') {
     const color = returnColor(args[0] ?? "Y");
     console.log(
       `%c${title}`,
-      ` color: ${color}; font-weight: bold; text-decoration: underline; `
+      ` color: ${color}; font-weight: bold; text-transform: uppercase; `
     );
+
     for (const arg of args) {
-        if (returnColor(arg) === color) {
-            continue;
-        }
-      console.log(arg);
+      if (matchesAnyColorSymbol(arg)) {
+        continue
+      } else {
+        console.log(arg)
+      }
+      
     }
   } else {
     throw new Error(
-      "Title is required as first argument, followed by all arguments to log!"
+      "Title is required as first argument!"
     );
   }
 }
@@ -76,16 +76,19 @@ const d = [
     name: "asdasd",
   },
   {
-    name: "asdasd",
+    name: "gurjinder",
   },
 ];
 const e = [1, 2, 4];
+const name = "Name"
 
-log("O", a, b, d, c, e);
+log("O", a, b, d, c, e,);
+log(a, b, d, c, e);
+
 // log("Object");
 
-headlog("title", a, b, c, d);
-headlog("asdasd", "V", a);
+// headlog(a, b, c, d);
+headlog(name, "P", d,c)
 
 function returnColor(color) {
   switch (color) {
@@ -108,4 +111,13 @@ function returnColor(color) {
     default:
       return "yellow";
   }
+}
+
+function matchesAnyColorSymbol (color) {
+  if( color === "Y" || color === "R" || color === "G" || color === "B" || color === "C"
+    || color === "V" || color === "O" || color === "P"
+  ) {
+    return true
+  }
+  return false
 }
