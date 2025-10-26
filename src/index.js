@@ -1,3 +1,13 @@
+
+/**
+ * @param {...*} args - Required*
+ * @example log("B", varA, varB...) OR log(varA...)
+ * @default yellow
+ * @description The log function can receive as many as arguments to console as you want. The first arugment have to be one of the color string symbol (Y, G, R, O, B, C, V, P) as asked for. If you skip the color as the first argument, Yellow is
+ * used as a default color for logging.
+
+*/
+
 function log(...args) {
 
   if (args?.length == 0) {
@@ -34,6 +44,15 @@ function log(...args) {
 
 }
 
+/**
+ * 
+ * @param {*} title  - Required* for the title
+ * @param  {...any} args -  first argument should be a color symbol string ("Y", "R", "G", "O", "B", "P", "C", "V") followed by everything you want to log. Default will be Yellow color.
+ * @example headlog("My heading", "B", varA, varB...) OR headlog("My heading", varA, varB) - yellow default
+ * @default yellow
+ * @description headlog functions is to be used when you want a title on the first line of console followed by all things you want to log. The styling only applies
+ * to the title in this case and other arguments will be logged as standard console log style.  
+ */
 function headlog(title, ...args) {
   // console.log(args)
   // console.log(title, args)
@@ -80,15 +99,10 @@ const d = [
   },
 ];
 const e = [1, 2, 4];
-const name = "Name"
+const name = "My heading"
 
-log("O", a, b, d, c, e,);
-log(a, b, d, c, e);
-
-// log("Object");
-
-// headlog(a, b, c, d);
-headlog(name, "P", d,c)
+// log("O", a, b, d, c, e,);
+// headlog(name, a, d,c)
 
 function returnColor(color) {
   switch (color) {
