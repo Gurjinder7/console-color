@@ -37,17 +37,14 @@ Homepage: https://github.com/Gurjinder7/console-color#readme  :wave:
 
 ### Examples:
 
-`log("O", a, b, c, d)`
-![alt text](<images/img2.png>)
-
-`log(a,b,c)`
-![alt text](<images/img3.png>)
-
-`headlog("My heading", "V", a, b, c)`
-![alt text](<images/img1.png>)
-
-`headlog("My heading", a, b, c)`
-![alt text](<images/img4.png>)
+1. `log("O", a, b, c, d)`
+   1. ![alt text](<images/img2.png>)
+2. `log(a,b,c)`
+   1. ![alt text](<images/img3.png>)
+3. `headlog("My heading", "V", a, b, c)`
+   1. ![alt text](<images/img1.png>)
+4. `headlog("My heading", a, b, c)`
+   1. ![alt text](<images/img4.png>)
 
 
 

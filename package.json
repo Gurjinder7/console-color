@@ -1,6 +1,6 @@
 {
   "name": "@gurjinder7/console-color",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Console.log in different colors for easier distinction between multiple or many console logs",
   "main": "lib/index.js",
   "scripts": {
@@ -36,6 +36,5 @@
     "@babel/preset-env": "^7.26.9",
     "jsdoc": "^4.0.5"
   },
-  "type": "module",
   "homepage": "https://github.com/Gurjinder7/console-color#readme"
 }
