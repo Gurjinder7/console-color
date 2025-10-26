@@ -101,8 +101,8 @@ const d = [
 const e = [1, 2, 4];
 const name = "My heading"
 
-// log("O", a, b, d, c, e,);
-// headlog(name, a, d,c)
+// log(a, b, d, c, e,);
+// headlog(name, "G", a, d,c)
 
 function returnColor(color) {
   switch (color) {
