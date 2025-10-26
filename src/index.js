@@ -7,7 +7,7 @@
 
 */
 
-function log(...args) {
+export function log(...args) {
   if (args?.length == 0) {
     throw new Error("Empty arguments in function call!");
   }
@@ -44,7 +44,7 @@ function log(...args) {
  * @description headlog functions is to be used when you want a title on the first line of console followed by all things you want to log. The styling only applies
  * to the title in this case and other arguments will be logged as standard console log style.
  */
-function headlog(title, ...args) {
+export function headlog(title, ...args) {
   if (!!title && typeof title === "string") {
     const color = returnColor(args[0] ?? "Y");
     console.log(

@@ -1,6 +1,6 @@
 {
   "name": "@gurjinder7/console-color",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Console.log in different colors for easier distinction between multiple or many console logs",
   "main": "lib/index.js",
   "scripts": {
